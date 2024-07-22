@@ -21,6 +21,10 @@ def translate_text(text, dest_lang='en'):
     translator = Translator()
     translation = translator.translate(text, dest=dest_lang)
     return translation.text
+def translate_text(text, dest_lang='te'):
+    translator = Translator()
+    translation = translator.translate(text, dest=dest_lang)
+    return translation.text
 
 if __name__ == "__main__":
     # Recognize speech
@@ -30,4 +34,6 @@ if __name__ == "__main__":
 
         # Translate recognized text (e.g., translate to Spanish 'es')
         translated_text = translate_text(recognized_text, dest_lang='te')
+        print(f"Translated Text: {translated_text}")
+        translated_text = translate_text(recognized_text, dest_lang='en')
         print(f"Translated Text: {translated_text}")
